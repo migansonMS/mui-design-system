@@ -13,7 +13,7 @@ import {
   Link,
 } from "@mui/material";
 
-export default { title: "Layout/Team Selector" };
+export default { title: "Screens/Team Selector" };
 
 const DEMO_MEMBERS = [
   { id: 101, name: "Ada Lovelace" },

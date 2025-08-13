@@ -1,4 +1,5 @@
-import { Paper, Typography, Stack } from "@mui/material";
+import { Paper, Typography, Stack, Box } from "@mui/material";
+import { WarningAmber } from "@mui/icons-material";
 
 export default { title: "Components/Paper" };
 
@@ -16,6 +17,17 @@ export const Variants = () => (
       <Typography variant="body2">
         Custom section surface from theme.
       </Typography>
+    </Paper>
+
+    <Paper variant="warning">
+      <WarningAmber className="PaperWarning-icon" />
+      <Box>
+        <Typography className="PaperWarning-title">Action required</Typography>
+        <Typography className="PaperWarning-body">
+          Your schedule for this month isn’t confirmed yet. Please review and
+          accept it to proceed.
+        </Typography>
+      </Box>
     </Paper>
   </Stack>
 );

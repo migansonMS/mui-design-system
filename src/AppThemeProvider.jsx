@@ -97,6 +97,14 @@ const theme = createTheme({
           props: { variant: "captionItalic" },
           style: ({ theme }) => theme.typography.captionItalic,
         },
+        {
+          props: { variant: "formLabel" },
+          style: ({ theme }) => ({
+            display: "block",
+            marginBottom: 4,
+            color: theme.palette.text.secondary,
+          }),
+        },
       ],
     },
     MuiButton: {
@@ -179,6 +187,45 @@ const theme = createTheme({
             alignItems: "center",
             padding: theme.spacing(2),
             backgroundColor: theme.palette.background.light,
+          }),
+        },
+        {
+          props: { variant: "warning" },
+          style: ({ theme }) => ({
+            display: "flex",
+            alignItems: "flex-start",
+            gap: theme.spacing(1.5),
+            padding: theme.spacing(2),
+            borderRadius: 12,
+            boxShadow: "0 2px 8px rgba(0,0,0,.06)",
+            backgroundColor:
+              theme.palette.ms?.alertWarning?.background ||
+              theme.palette.warning[50],
+            border: `1px solid ${theme.palette.warning[400]}`,
+            color: theme.palette.warning[900],
+
+            "& .PaperWarning-icon": {
+              color:
+                theme.palette.ms?.alertWarning?.color ||
+                theme.palette.warning.main,
+              marginTop: theme.spacing(0.25),
+              flex: "0 0 auto",
+            },
+            "& .PaperWarning-title": {
+              ...theme.typography.h6,
+              margin: 0,
+            },
+            "& .PaperWarning-body": {
+              ...theme.typography.body2,
+              margin: 0,
+            },
+            "& .PaperWarning-actions": {
+              marginLeft: "auto",
+              display: "flex",
+              gap: theme.spacing(1),
+              alignItems: "center",
+              flexWrap: "wrap",
+            },
           }),
         },
       ],
@@ -328,6 +375,61 @@ const theme = createTheme({
             fullWidth: true,
           },
         },
+      },
+    },
+    // --- Snackbars & Alerts
+    MuiSnackbar: {
+      defaultProps: {
+        anchorOrigin: { vertical: "bottom", horizontal: "center" },
+        autoHideDuration: 4000,
+      },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          // spacing around the snackbar container
+          margin: theme.spacing(0, 1),
+          // style the Alert rendered inside
+          "& .MuiAlert-root": {
+            borderRadius: 10,
+            boxShadow: "0 6px 18px rgba(0,0,0,.15)",
+            alignItems: "center",
+          },
+          "& .MuiAlert-icon": { marginRight: theme.spacing(1) },
+          "& .MuiAlert-action": { paddingLeft: theme.spacing(1) },
+        }),
+      },
+    },
+
+    MuiAlert: {
+      defaultProps: {
+        variant: "filled", // all snackbars use filled by default
+        elevation: 6,
+      },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          fontSize: 14,
+          lineHeight: 1.4,
+          padding: theme.spacing(1, 1.5),
+          borderRadius: 10,
+        }),
+        icon: { marginRight: 8 },
+        action: { marginLeft: 8 },
+        // brand-aligned filled colors
+        filledSuccess: ({ theme }) => ({
+          backgroundColor: theme.palette.success.main,
+          color: theme.palette.common.white,
+        }),
+        filledInfo: ({ theme }) => ({
+          backgroundColor: theme.palette.info.main,
+          color: theme.palette.common.white,
+        }),
+        filledWarning: ({ theme }) => ({
+          backgroundColor: theme.palette.warning.main,
+          color: theme.palette.common.white,
+        }),
+        filledError: ({ theme }) => ({
+          backgroundColor: theme.palette.error.main,
+          color: theme.palette.common.white,
+        }),
       },
     },
   },
