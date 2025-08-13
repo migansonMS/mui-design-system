@@ -18,7 +18,7 @@ import {
 import Autocomplete from "@mui/material/Autocomplete";
 import { Grid } from "@mui/material";
 
-export default { title: "Components/Inputs" };
+export default { title: "Forms/Inputs" };
 
 const cities = ["Tokyo", "Osaka", "Kyoto", "Nagoya", "Sapporo"];
 const roles = ["Admin", "Editor", "Viewer"];

@@ -9,22 +9,18 @@ export default {
 };
 
 export const Basic = () => (
-  <Breadcrumbs variant="breadcrumbs" aria-label="breadcrumb">
-    <Link href="#/">Home</Link>
-    <Link href="#/accounts/management">Manage Accounts Assignment</Link>
-    <Link aria-current="page">My Account</Link>
-  </Breadcrumbs>
-);
-
-export const WithIconSeparator = () => (
   <Breadcrumbs
     variant="breadcrumbs"
     aria-label="breadcrumb"
     separator={<NavigateNext fontSize="small" />}
   >
-    <Link href="#/">Home</Link>
-    <Link href="#/accounts/management">Manage Accounts Assignment</Link>
-    <Link aria-current="page">Jenny Smith (12345)</Link>
+    <Link data-variant="crumb" href="#/">
+      Home
+    </Link>
+    <Link data-variant="crumb" href="#/accounts/management">
+      Manage Accounts Assignment
+    </Link>
+    <Typography color="text.primary">My Account</Typography>
   </Breadcrumbs>
 );
 
@@ -37,22 +33,18 @@ export const LongPathCollapsed = () => (
     itemsAfterCollapse={1}
     separator={<NavigateNext fontSize="small" />}
   >
-    <Link href="#/">Home</Link>
-    <Link href="#/admin">Admin</Link>
-    <Link href="#/admin/users">Users</Link>
-    <Link href="#/admin/users/123">Profiles</Link>
-    <Link aria-current="page">Details</Link>
-  </Breadcrumbs>
-);
-
-export const LastAsTypography = () => (
-  <Breadcrumbs
-    variant="breadcrumbs"
-    aria-label="breadcrumb"
-    separator={<NavigateNext fontSize="small" />}
-  >
-    <Link href="#/">Home</Link>
-    <Link href="#/accounts/management">Manage Accounts Assignment</Link>
-    <Typography color="text.primary">My Account</Typography>
+    <Link data-variant="crumb" href="#/">
+      Home
+    </Link>
+    <Link data-variant="crumb" href="#/admin">
+      Admin
+    </Link>
+    <Link data-variant="crumb" href="#/admin/users">
+      Users
+    </Link>
+    <Link data-variant="crumb" href="#/admin/users/123">
+      Profiles
+    </Link>
+    <Link data-variant="crumb">Details</Link>
   </Breadcrumbs>
 );

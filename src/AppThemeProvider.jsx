@@ -178,7 +178,7 @@ const theme = createTheme({
             justifyContent: "space-between",
             alignItems: "center",
             padding: theme.spacing(2),
-            backgroundColor: theme.palette.secondary.light,
+            backgroundColor: theme.palette.background.light,
           }),
         },
       ],
@@ -247,7 +247,7 @@ const theme = createTheme({
         root: ({ theme }) => ({
           textTransform: "none",
           fontWeight: 600,
-          color: theme.palette.text.primary,
+          color: theme.palette.background.dark,
           opacity: 1,
           "&.Mui-selected": { color: theme.palette.primary.main },
         }),
@@ -256,7 +256,7 @@ const theme = createTheme({
         {
           props: { variant: "styled" },
           style: ({ theme }) => ({
-            color: theme.palette.primary.dark,
+            color: theme.palette.background.dark,
             opacity: 0.7,
             "&.Mui-selected": { color: theme.palette.primary.main, opacity: 1 },
           }),
@@ -265,20 +265,32 @@ const theme = createTheme({
     },
 
     MuiLink: {
-      defaultProps: { underline: "hover", color: "inherit" },
+      defaultProps: { underline: "hover", color: "primary" },
       styleOverrides: {
-        root: ({ theme }) => ({
+        root: {
           textDecoration: "none",
           cursor: "pointer",
-          '&[aria-current="page"]': {
-            color: theme.palette.primary.dark,
-            pointerEvents: "none",
-            cursor: "default",
-            textDecoration: "none",
-            fontWeight: 700,
-          },
-        }),
+        },
       },
+      variants: [
+        {
+          props: { "data-variant": "crumb" },
+          style: ({ theme }) => ({
+            color: theme.palette.text.secondary,
+            fontWeight: 500,
+            textDecoration: "none",
+            "&:hover": { textDecoration: "underline" },
+
+            '&[aria-current="page"]': {
+              color: theme.palette.primary.dark,
+              pointerEvents: "none",
+              cursor: "default",
+              textDecoration: "none",
+              fontWeight: 700,
+            },
+          }),
+        },
+      ],
     },
 
     MuiBreadcrumbs: {
@@ -304,6 +316,19 @@ const theme = createTheme({
           }),
         },
       ],
+    },
+    MuiTimePicker: {
+      defaultProps: {
+        ampm: false,
+        slotProps: {
+          textField: {
+            size: "small",
+            margin: "normal",
+            variant: "standard",
+            fullWidth: true,
+          },
+        },
+      },
     },
   },
 });
