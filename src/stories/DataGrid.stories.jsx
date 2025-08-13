@@ -20,8 +20,8 @@ const TYPES = [
   "Link",
 ];
 const EXAMPLES = [
-  "h6 + muted",
-  "subtitle1 + caption",
+  "h4 + muted",
+  "body2Semi + caption",
   "filled/success",
   "outlined/warning",
   "error/contained",
@@ -54,9 +54,8 @@ const rows = Array.from({ length: 50 }, (_, i) => ({
 export default { title: "Components/DataGrid" };
 
 export const ThemedHeader = () => (
-  // If using autoHeight: use any surface (card/home-section)
   <Paper variant="card">
-    <Typography variant="h2Subtitle">Themed DataGrid</Typography>
+    <Typography variant="h2">Themed DataGrid</Typography>
     <DataGrid rows={rows} columns={columns} />
   </Paper>
 );

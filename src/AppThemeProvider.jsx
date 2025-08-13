@@ -1,104 +1,93 @@
-// src/providers/AppThemeProvider.jsx
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import PropTypes from "prop-types";
-import { grey, yellow } from "@mui/material/colors";
+import { grey, amber } from "@mui/material/colors";
 
 const theme = createTheme({
   palette: {
     primary: {
       main: "#F08732",
-      light: "#d2d2d2",
-      dark: "#282d32",
-      50: "#FFF3E0",
-      100: "#FFE0B2",
-      200: "#FFCC80",
-      300: "#FFB74D",
-      400: "#FFA726",
+      dark: "#DB6B10",
+      light: "#F3A15D",
+      contrastText: "#FFFFFF",
+      400: "#F3A15D",
       500: "#F08732",
-      600: "#E67C2B",
-      700: "#D06F28",
-      800: "#C3641F",
-      900: "#9B4C16",
+      600: "#DB6B10",
     },
+
     secondary: {
-      main: "#00B7EF",
-      light: "#EBF3F5",
-      dark: "#121829",
-      50: "#EBF3F5",
-      100: "#D4F2FF",
-      200: "#ADEBFF",
-      300: "#9EDAFF",
-      400: "#82D0FF",
-      500: "#00B7EF",
-      600: "#00A3D6",
-      700: "#008CBC",
-      800: "#0077A3",
-      900: "#005575",
+      main: grey[700],
+      dark: grey[800],
+      light: grey[300],
+      contrastText: "#FFFFFF",
+      300: grey[300],
+      700: grey[700],
+      800: grey[800],
     },
+
+    warning: {
+      main: amber[500],
+      dark: amber[900],
+      light: amber[400],
+      contrastText: "#FFFFFF",
+      50: amber[50],
+      400: amber[400],
+      500: amber[500],
+      900: amber[900],
+    },
+
+    ms: {
+      alertWarning: {
+        color: "#DB6B10",
+        background: amber[50],
+      },
+    },
+    custom: {
+      mist: "#EBF3F5",
+    },
+
     background: { light: "#EBF3F5", dark: "#282d32" },
+
     grey,
-    yellow,
   },
 
   typography: {
-    button: { fontFamily: "Roboto", fontSize: 16, fontWeight: "bolder" },
-    h4: { fontWeight: "bolder" },
-    h5: {
-      fontFamily: "Roboto",
-      fontSize: 25,
-      fontWeight: 700,
-      lineHeight: "30px",
-    },
-    h6: {
-      fontFamily: "Roboto",
-      fontSize: 20,
-      fontWeight: 700,
-      lineHeight: "30px",
-    },
-    subtitle1: { fontWeight: "bolder", fontSize: 13 },
-    subtitle2: { fontWeight: "normal", fontSize: 13 },
+    fontFamily: "Roboto, system-ui, -apple-system, Segoe UI, Arial",
 
-    h1Title: {
-      fontFamily: "Roboto",
-      fontWeight: 700,
-      fontSize: "2rem",
-      lineHeight: 1.2,
-    },
-    h2Subtitle: {
-      fontFamily: "Roboto",
-      fontWeight: 600,
-      fontSize: "1.75rem",
-      lineHeight: 1.25,
-    },
-    body16: { fontSize: "1rem", lineHeight: 1.5 },
-    bodyMuted: { fontSize: "0.75rem", lineHeight: 1.4, color: grey[600] },
-    captionItalic: { fontSize: "0.75rem", fontStyle: "italic" },
+    h1: { fontSize: 38, fontWeight: 600, lineHeight: 1.25 },
+    h2: { fontSize: 30, fontWeight: 600, lineHeight: 1.25 },
+    h3: { fontSize: 24, fontWeight: 600, lineHeight: 1.25 },
+    h4: { fontSize: 20, fontWeight: 600, lineHeight: 1.25 },
+    h5: { fontSize: 16, fontWeight: 600, lineHeight: 1.5 },
+
+    body1: { fontSize: 16, fontWeight: 400, lineHeight: 1.5 },
+    body2: { fontSize: 14, fontWeight: 400, lineHeight: 1.5 },
+
+    body1Semi: { fontSize: 16, fontWeight: 600, lineHeight: 1.5 },
+    body2Semi: { fontSize: 14, fontWeight: 600, lineHeight: 1.5 },
+
+    bodyMuted: { fontSize: 12, lineHeight: 1.4, color: grey[600] },
+    captionItalic: { fontSize: 12, fontStyle: "italic" },
   },
 
   components: {
     MuiTypography: {
       defaultProps: {
         variantMapping: {
-          h1Title: "h1",
-          h2Subtitle: "h2",
-          body16: "p",
+          body1Semi: "p",
+          body2Semi: "p",
           bodyMuted: "p",
           captionItalic: "span",
         },
       },
       variants: [
         {
-          props: { variant: "h1Title" },
-          style: ({ theme }) => theme.typography.h1quickTitle,
+          props: { variant: "body1Semi" },
+          style: ({ theme }) => theme.typography.body1Semi,
         },
         {
-          props: { variant: "h2Subtitle" },
-          style: ({ theme }) => theme.typography.h2Subtitle,
-        },
-        {
-          props: { variant: "body16" },
-          style: ({ theme }) => theme.typography.body16,
+          props: { variant: "body2Semi" },
+          style: ({ theme }) => theme.typography.body2Semi,
         },
         {
           props: { variant: "bodyMuted" },
@@ -110,7 +99,6 @@ const theme = createTheme({
         },
       ],
     },
-
     MuiButton: {
       styleOverrides: {
         root: { borderRadius: 8, textTransform: "uppercase", fontWeight: 600 },
@@ -156,7 +144,7 @@ const theme = createTheme({
         root: ({ theme }) => ({
           marginTop: theme.spacing(1),
           "& .MuiDataGrid-columnHeader": {
-            backgroundColor: theme.palette.secondary.light,
+            backgroundColor: theme.palette.background.light,
           },
         }),
       },
@@ -184,14 +172,6 @@ const theme = createTheme({
           }),
         },
         {
-          props: { "data-surface": "padded" },
-          style: ({ theme }) => ({ padding: theme.spacing(2) }),
-        },
-        {
-          props: { "data-surface": "tile" },
-          style: ({ theme }) => ({ padding: theme.spacing(2), width: 160 }),
-        },
-        {
           props: { variant: "header" },
           style: ({ theme }) => ({
             display: "flex",
@@ -212,7 +192,7 @@ const theme = createTheme({
       },
       styleOverrides: {
         container: { alignItems: "center", justifyContent: "center" },
-        paper: ({ theme }) => ({
+        paper: () => ({
           borderRadius: 12,
           boxShadow: "0 8px 30px rgba(0,0,0,.18)",
         }),
@@ -244,11 +224,9 @@ const theme = createTheme({
         }),
       },
     },
-    // createTheme({ components: { … } })
     MuiTabs: {
       defaultProps: { textColor: "primary", indicatorColor: "primary" },
       styleOverrides: {
-        // DEFAULT = plain
         root: ({ theme }) => ({
           backgroundColor: "transparent",
           borderBottom: `1px solid ${theme.palette.divider}`,
@@ -256,10 +234,9 @@ const theme = createTheme({
       },
       variants: [
         {
-          // VARIANT = styled
-          props: { "data-variant": "styled" },
+          props: { variant: "styled" },
           style: ({ theme }) => ({
-            backgroundColor: theme.palette.secondary.light,
+            backgroundColor: theme.palette.background.light,
             borderBottom: "none",
           }),
         },
@@ -267,7 +244,6 @@ const theme = createTheme({
     },
     MuiTab: {
       styleOverrides: {
-        // DEFAULT = plain
         root: ({ theme }) => ({
           textTransform: "none",
           fontWeight: 600,
@@ -278,12 +254,53 @@ const theme = createTheme({
       },
       variants: [
         {
-          // VARIANT = styled
-          props: { "data-variant": "styled" },
+          props: { variant: "styled" },
           style: ({ theme }) => ({
             color: theme.palette.primary.dark,
             opacity: 0.7,
             "&.Mui-selected": { color: theme.palette.primary.main, opacity: 1 },
+          }),
+        },
+      ],
+    },
+
+    MuiLink: {
+      defaultProps: { underline: "hover", color: "inherit" },
+      styleOverrides: {
+        root: ({ theme }) => ({
+          textDecoration: "none",
+          cursor: "pointer",
+          '&[aria-current="page"]': {
+            color: theme.palette.primary.dark,
+            pointerEvents: "none",
+            cursor: "default",
+            textDecoration: "none",
+            fontWeight: 700,
+          },
+        }),
+      },
+    },
+
+    MuiBreadcrumbs: {
+      variants: [
+        {
+          props: { variant: "breadcrumbs" },
+          style: ({ theme }) => ({
+            padding: theme.spacing(1),
+            "& .MuiBreadcrumbs-separator": {
+              color: theme.palette.text.secondary,
+            },
+            "& .MuiLink-root": {
+              textDecoration: "none",
+              cursor: "pointer",
+            },
+            '& .MuiLink-root[aria-current="page"]': {
+              color: theme.palette.primary.dark,
+              pointerEvents: "none",
+              cursor: "default",
+              fontWeight: 700,
+              textDecoration: "none",
+            },
           }),
         },
       ],

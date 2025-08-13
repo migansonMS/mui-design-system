@@ -1,4 +1,3 @@
-// src/stories/Inputs.stories.jsx
 import { useState } from "react";
 import {
   Paper,
@@ -34,11 +33,9 @@ export const AllControls = () => {
 
   return (
     <Paper variant="card">
-      <Typography variant="h6">Inputs</Typography>
+      <Typography variant="h4">Inputs</Typography>
 
-      {/* layout uses Stack spacing prop (no sx) */}
       <Stack direction="column" spacing={2}>
-        {/* Text */}
         <TextField
           label="Text"
           placeholder="Type something"
@@ -46,8 +43,13 @@ export const AllControls = () => {
           onChange={(e) => setText(e.target.value)}
           fullWidth
         />
+        <TextField
+          placeholder="Text without label"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          fullWidth
+        />
 
-        {/* Dropdown (Select) */}
         <FormControl fullWidth>
           <InputLabel id="role-label">Role</InputLabel>
           <Select
@@ -64,7 +66,6 @@ export const AllControls = () => {
           </Select>
         </FormControl>
 
-        {/* Autocomplete */}
         <Autocomplete
           value={city}
           onChange={(_, v) => setCity(v)}
@@ -97,7 +98,6 @@ export const AllControls = () => {
           />
         </Stack>
 
-        {/* Checkboxes */}
         <FormGroup>
           <FormControlLabel
             control={
@@ -127,7 +127,6 @@ export const AllControls = () => {
           />
         </FormGroup>
 
-        {/* Radios */}
         <FormControl>
           <RadioGroup
             value={radio}
@@ -165,9 +164,8 @@ export const SqueezedInputs = () => {
 
   return (
     <Paper variant="card">
-      <Typography variant="h6">Squeezed Inputs</Typography>
+      <Typography variant="h4">Squeezed Inputs</Typography>
 
-      {/* 8 inputs side-by-side; no sx, no styled */}
       <Grid container columns={8} spacing={2} wrap="nowrap" alignItems="center">
         <Grid item xs={1}>
           <TextField
@@ -210,8 +208,6 @@ export const SqueezedInputs = () => {
           />
         </Grid>
         <Grid item xs={2}>
-          {" "}
-          {/* was xs={1} */}
           <FormControl size="small" fullWidth>
             <InputLabel id="role-label">Role</InputLabel>
             <Select
@@ -242,8 +238,6 @@ export const SqueezedInputs = () => {
     </Paper>
   );
 };
-
-// Optional: smaller, focused stories
 
 export const TextOnly = () => (
   <Paper variant="card">
@@ -292,7 +286,7 @@ export const AutocompleteMultiple = () => {
 
   return (
     <Paper variant="card">
-      <Typography variant="h6">Autocomplete (multiple)</Typography>
+      <Typography variant="h4">Autocomplete (multiple)</Typography>
       <Stack direction="column" spacing={2}>
         <Autocomplete
           multiple

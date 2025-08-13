@@ -1,6 +1,12 @@
-// src/stories/Dialog.stories.jsx
 import * as React from "react";
-import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Typography } from "@mui/material";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  Typography,
+} from "@mui/material";
 
 export default { title: "Components/Dialog" };
 
@@ -8,7 +14,9 @@ export const Basic = () => {
   const [open, setOpen] = React.useState(false);
   return (
     <>
-      <Button variant="contained" onClick={() => setOpen(true)}>Open dialog</Button>
+      <Button variant="contained" onClick={() => setOpen(true)}>
+        Open dialog
+      </Button>
       <Dialog open={open} onClose={() => setOpen(false)}>
         <DialogTitle>Dialog Title</DialogTitle>
         <DialogContent>
@@ -20,8 +28,12 @@ export const Basic = () => {
           </Typography>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setOpen(false)} variant="outlined">Cancel</Button>
-          <Button onClick={() => setOpen(false)} variant="contained">OK</Button>
+          <Button onClick={() => setOpen(false)} variant="outlined">
+            Cancel
+          </Button>
+          <Button onClick={() => setOpen(false)} variant="contained">
+            OK
+          </Button>
         </DialogActions>
       </Dialog>
     </>

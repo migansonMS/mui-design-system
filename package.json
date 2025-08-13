@@ -10,8 +10,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "storybook:build": "build-storybook",
-    "storybook:deploy": "storybook:build && gh-pages -d storybook-static"
+    "storybook:build": "npm run build-storybook",
+    "storybook:deploy": "npm run storybook:build && npx gh-pages -d storybook-static -b gh-pages"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

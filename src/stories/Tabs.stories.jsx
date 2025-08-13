@@ -51,37 +51,32 @@ export const Styled = () => {
   const [value, setValue] = React.useState(0);
   return (
     <Paper variant="card">
-      <Tabs
-        data-variant="styled"
-        value={value}
-        onChange={(_, nv) => setValue(nv)}
-      >
+      <Tabs variant="styled" value={value} onChange={(_, nv) => setValue(nv)}>
         <Tab
-          data-variant="styled"
+          variant="styled"
           label="Profile"
           id="tab-0"
           aria-controls="tab-panel-0"
         />
         <Tab
-          data-variant="styled"
+          variant="styled"
           label="Compensation"
           id="tab-1"
           aria-controls="tab-panel-1"
         />
         <Tab
-          data-variant="styled"
+          variant="styled"
           label="Requirements"
           id="tab-2"
           aria-controls="tab-panel-2"
         />
         <Tab
-          data-variant="styled"
+          variant="styled"
           label="Logs"
           id="tab-3"
           aria-controls="tab-panel-3"
         />
       </Tabs>
-      {/* panels… */}
     </Paper>
   );
 };
