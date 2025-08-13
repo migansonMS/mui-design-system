@@ -1,1 +1,0 @@
-import{e as r}from"./createSimplePaletteValueFilter-CqGfQfEy.js";import{m as n}from"./iframe-D1KZucPw.js";const a=r();function c(s){const{theme:e,name:o,props:t}=s;return!e||!e.components||!e.components[o]||!e.components[o].defaultProps?t:n(e.components[o].defaultProps,t)}export{c as g,a as s};

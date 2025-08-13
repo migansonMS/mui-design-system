@@ -1,0 +1,7 @@
+import{j as s}from"./iframe-Dn9ulxlD.js";import{S as a}from"./Stack-D8ZbXtn1.js";import{C as e}from"./Chip-C21rtNGF.js";import"./preload-helper-D9Z9MdNV.js";import"./createSimplePaletteValueFilter-D0nrBtGU.js";import"./getThemeProps-Crwei_al.js";import"./createSvgIcon-CN4U8T1Z.js";import"./useSlot-Bhz5T65W.js";import"./mergeSlotProps-Bhz1hQ_Y.js";import"./ButtonBase-I1KCXdwa.js";const C={title:"Components/Chip"},r=()=>s.jsxs(a,{direction:"row",spacing:1,children:[s.jsx(e,{label:"Cleared",color:"success",size:"small"}),s.jsx(e,{label:"Pending",color:"warning",size:"small"}),s.jsx(e,{label:"Rejected",color:"error",size:"small"}),s.jsx(e,{label:"Work day",color:"success",size:"small",variant:"outlined"}),s.jsx(e,{label:"Rest day",size:"small",variant:"outlined"})]});r.__docgenInfo={description:"",methods:[],displayName:"Basic"};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:`() => <Stack direction="row" spacing={1}>\r
+    <Chip label="Cleared" color="success" size="small" />\r
+    <Chip label="Pending" color="warning" size="small" />\r
+    <Chip label="Rejected" color="error" size="small" />\r
+    <Chip label="Work day" color="success" size="small" variant="outlined" />\r
+    <Chip label="Rest day" size="small" variant="outlined" />\r
+  </Stack>`,...r.parameters?.docs?.source}}};const b=["Basic"];export{r as Basic,b as __namedExportsOrder,C as default};

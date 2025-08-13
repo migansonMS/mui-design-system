@@ -1,5 +1,0 @@
-import{j as e}from"./iframe-D1KZucPw.js";import{T as o}from"./Typography-BOYhoNXW.js";import{P as s}from"./Paper-B0PEe_2q.js";import"./preload-helper-D9Z9MdNV.js";import"./createSimplePaletteValueFilter-CqGfQfEy.js";import"./useTheme-91eHUXnP.js";const m={title:"Components/Header"},r=()=>e.jsx(o,{variant:"h6",children:"Basic Header"}),a=()=>e.jsx(s,{variant:"header",children:e.jsx(o,{variant:"h6",color:"primary.main",children:"Styled Header"})});r.__docgenInfo={description:"",methods:[],displayName:"Basic"};a.__docgenInfo={description:"",methods:[],displayName:"Styled"};r.parameters={...r.parameters,docs:{...r.parameters?.docs,source:{originalSource:'() => <Typography variant="h6">Basic Header</Typography>',...r.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`() => <Paper variant="header">\r
-    <Typography variant="h6" color="primary.main">\r
-      Styled Header\r
-    </Typography>\r
-  </Paper>`,...a.parameters?.docs?.source}}};const y=["Basic","Styled"];export{r as Basic,a as Styled,y as __namedExportsOrder,m as default};
