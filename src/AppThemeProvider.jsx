@@ -43,7 +43,7 @@ const theme = createTheme({
       },
     },
     custom: {
-      mist: "#EBF3F5",
+      purple: "#AB47BC",
     },
 
     background: { light: "#EBF3F5", dark: "#282d32" },
@@ -144,6 +144,15 @@ const theme = createTheme({
           fontSize: "0.75rem",
         },
       },
+      variants: [
+        {
+          props: { color: "purple" },
+          style: ({ theme }) => ({
+            backgroundColor: theme.palette.custom.purple,
+            color: theme.palette.common.white,
+          }),
+        },
+      ],
     },
 
     MuiDataGrid: {
@@ -277,6 +286,7 @@ const theme = createTheme({
         root: ({ theme }) => ({
           backgroundColor: "transparent",
           borderBottom: `1px solid ${theme.palette.divider}`,
+          letterSpacing: ".02em",
         }),
       },
       variants: [
@@ -431,6 +441,23 @@ const theme = createTheme({
           color: theme.palette.common.white,
         }),
       },
+    },
+    MuiStack: {
+      variants: [
+        {
+          props: { variant: "fieldWithLabel" },
+          style: ({ theme }) => ({
+            display: "flex",
+            flexDirection: "column",
+            gap: theme.spacing(0.5),
+            width: "100%",
+            '& > .MuiTypography-root[component="label"]': {
+              display: "block",
+              marginBottom: 2,
+            },
+          }),
+        },
+      ],
     },
   },
 });

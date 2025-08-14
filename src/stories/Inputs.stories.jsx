@@ -49,6 +49,12 @@ export const AllControls = () => {
           onChange={(e) => setText(e.target.value)}
           fullWidth
         />
+        <Stack variant="fieldWithLabel">
+          <Typography variant="formLabel" component="label">
+            Position Title
+          </Typography>
+          <TextField size="small" fullWidth placeholder="Position title" />
+        </Stack>
 
         <FormControl fullWidth>
           <InputLabel id="role-label">Role</InputLabel>
@@ -241,7 +247,14 @@ export const SqueezedInputs = () => {
 
 export const TextOnly = () => (
   <Paper variant="card">
-    <TextField label="Text" placeholder="Type something" fullWidth />
+    <Stack direction="column" spacing={2}>
+      <TextField label="Text" placeholder="Type something" fullWidth />
+      <TextField placeholder="Text without label" fullWidth />
+      <Stack variant="fieldWithLabel">
+        <Typography variant="formLabel">Position Title</Typography>
+        <TextField size="small" fullWidth placeholder="Position title" />
+      </Stack>
+    </Stack>
   </Paper>
 );
 

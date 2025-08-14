@@ -78,6 +78,13 @@ export const BrandPalette = () => {
         <Swatch label="light" color={theme.palette.background.light} />
         <Swatch label="dark" color={theme.palette.background.dark} />
       </Stack>
+
+      <Typography variant="h4" sx={{ mt: 2 }}>
+        Custom
+      </Typography>
+      <Stack direction="row" spacing={1}>
+        <Swatch label="purple" color={theme.palette.custom.purple} />
+      </Stack>
     </Stack>
   );
 };
